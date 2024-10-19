@@ -58,7 +58,7 @@ def get_tickets_post():
     }
 
     if isadded:
-        return json_ticket, 200
+        return json_ticket, 201
     else:
         return 400
 
