@@ -14,6 +14,10 @@ def TS_hello_world():
     statement = 'Ticket service!'
     return statement
 
+@app.route('/manage/health', methods=['GET'])
+def TS_health_check():
+    return 200
+
 @app.route('/api/v1/tickets/<user>', methods=["GET"])
 def get_tickets(user: str):
     ticketsdb.create_ticketsdb()

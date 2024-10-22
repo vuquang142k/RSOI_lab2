@@ -20,6 +20,10 @@ def GWS_hello_world():
     statement = 'Gateway service!'
     return statement
 
+@app.route('/manage/health', methods=['GET'])
+def GWS_health_check():
+    return 200
+
 # Получить список всех перелетов
 @app.route('/api/v1/flights', methods=["GET"])
 def get_flights():

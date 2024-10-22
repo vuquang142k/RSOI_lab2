@@ -8,6 +8,10 @@ def FS_hello_world():
     statement = 'Flight service!'
     return statement
 
+@app.route('/manage/health', methods=['GET'])
+def FS_health_check():
+    return 200
+
 @app.route('/api/v1/flights', methods=["GET"])
 def get_flights():
     flightdb.create_flightsdb()
