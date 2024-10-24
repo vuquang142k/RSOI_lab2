@@ -1,4 +1,4 @@
-From python:3.8
+From python:3.11
 
 COPY . /gateway
 COPY requirements.txt /gateway

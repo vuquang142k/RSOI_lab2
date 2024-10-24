@@ -1,6 +1,6 @@
 import psycopg2
 
-#DB_URL = "host='localhost' port = '5432' dbname='postgres' user='post' password='1234' "
+#DB_URL = "host='localhost' port = '5432' dbname='microservice-flight' user='postgres' password='quang' "
 #DB_URL = "host='postgres' port = '5432' database='flights' user='program' password='test'"
 DB_URL = "postgresql://program:test@postgres:5432/flights"
 # password = "test"
@@ -10,11 +10,6 @@ DB_URL = "postgresql://program:test@postgres:5432/flights"
 # host = "postgres"
 # database = "flight"
 
-# password = "1234"
-# user = "post"
-# port = "5432"
-# host = "localhost"
-# database = "postgres"
 
 def create_flightsdb():
     db = psycopg2.connect(DB_URL)

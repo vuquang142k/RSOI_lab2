@@ -1,6 +1,6 @@
 import psycopg2
 
-#DB_URL = "host='localhost' port = '5432' dbname='postgres' user='post' password='1234' "
+#DB_URL = "host='localhost' port = '5432' dbname='microservice-flight' user='postgres' password='quang' "
 #DB_URL = "host='postgres' port = '5432' database='privileges' user='program' password='test'"
 DB_URL = "postgresql://program:test@postgres:5432/privileges"
 # password = "test"
@@ -10,11 +10,6 @@ DB_URL = "postgresql://program:test@postgres:5432/privileges"
 # host = "postgres"
 # database = "flight"
 
-# password = "1234"
-# user = "post"
-# port = "5432"
-# host = "localhost"
-# database = "postgres"
 
 def create_privilegedb():
     db = psycopg2.connect(DB_URL)
@@ -44,11 +39,11 @@ def create_privilegedb():
                    """)
     db.commit()
 
-    cursor.execute(f"SELECT privilege FROM privilege WHERE username = 'Test Max'")
+    cursor.execute(f"SELECT privilege FROM privilege WHERE username = 'Quang'")
     a = cursor.fetchone()
     if not a:
         cursor.execute(f"INSERT INTO privilege (id, username, status, balance) "
-                       f"VALUES (DEFAULT, 'Test Max', DEFAULT, 0);")
+                       f"VALUES (DEFAULT, 'Quang', DEFAULT, 0);")
         db.commit()
     cursor.close()
     db.close()
