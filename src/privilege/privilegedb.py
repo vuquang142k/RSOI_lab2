@@ -39,11 +39,11 @@ def create_privilegedb():
                    """)
     db.commit()
 
-    cursor.execute(f"SELECT privilege FROM privilege WHERE username = 'Quang'")
+    cursor.execute(f"SELECT privilege FROM privilege WHERE username = 'Test Max'")
     a = cursor.fetchone()
     if not a:
         cursor.execute(f"INSERT INTO privilege (id, username, status, balance) "
-                       f"VALUES (DEFAULT, 'Quang', DEFAULT, 0);")
+                       f"VALUES (DEFAULT, 'Test Max', DEFAULT, 0);")
         db.commit()
     cursor.close()
     db.close()
