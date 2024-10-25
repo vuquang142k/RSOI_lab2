@@ -185,9 +185,9 @@ def get_privilege():
     return privilege_info.json(), 200
 
 
-@app.route(f"/api/v1/flights/<ticketUid>", methods=["GET"])
-def get_flight_byticket(ticketUid: str):
-    req = requests.get(f"http://{flights_ip}:8060/api/v1/flights/{ticketUid}")
+@app.route(f"/api/v1/flights/<flight_number>", methods=["GET"])
+def get_flight_byticket(flight_number: str):
+    req = requests.get(f"http://{flights_ip}:8060/api/v1/flights/{flight_number}")
     return req.json(), 200
 
 
